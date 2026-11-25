@@ -18,6 +18,10 @@
     padding-block-start: var(--space-section);
   }
 
+  .l-flow__item--contact {
+    padding-block-start: var(--space-section);
+  }
+
   @include abstracts.mq(tablet-reference) {
     .l-flow__item--recommended {
       padding-block-start: var(--space-section);

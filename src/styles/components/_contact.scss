@@ -1,0 +1,86 @@
+@use '../abstracts' as abstracts;
+
+@layer components {
+  .contact {
+    row-gap: var(--space-none);
+  }
+
+  .contact__heading,
+  .contact__form,
+  .contact__details {
+    grid-column: 1 / -1;
+  }
+
+  .contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-form-gap);
+    margin-block-start: var(--space-heading-gap);
+  }
+
+  .contact__action {
+    margin-block-start: var(--space-form-gap);
+  }
+
+  .contact__details {
+    width: 100%;
+    margin: var(--space-heading-gap) var(--space-none) var(--space-none);
+    padding: var(--space-none);
+  }
+
+  .contact__item + .contact__item {
+    margin-block-start: var(--space-layout-gutter);
+  }
+
+  .contact__label {
+    margin: var(--space-none) var(--space-none) var(--space-control-label);
+    color: var(--color-contact-label);
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-hint);
+  }
+
+  .contact__value {
+    margin: var(--space-none);
+    color: var(--color-contact-value);
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-body);
+  }
+
+  .contact__value-link {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .contact__value-link:focus-visible {
+    outline: var(--size-focus-ring) solid var(--color-text);
+    outline-offset: var(--space-icon);
+  }
+
+  .contact__address {
+    font-style: normal;
+  }
+
+  @include abstracts.mq(tablet-reference) {
+    .contact__form {
+      grid-column: 1 / span 3;
+    }
+
+    .contact__details {
+      grid-column: 4 / span 3;
+      width: var(--size-contact-details-wide);
+      margin-block-start: var(--space-heading-gap);
+    }
+  }
+
+  @include abstracts.mq(desktop-reference) {
+    .contact__form {
+      grid-column: 1 / span 5;
+    }
+
+    .contact__details {
+      grid-column: 8 / span 3;
+    }
+  }
+}

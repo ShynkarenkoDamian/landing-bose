@@ -11,6 +11,7 @@ include ../components/hero.pug
 include ../components/recommended.pug
 include ../components/category-gallery.pug
 include ../components/why-direct.pug
+include ../components/contact.pug
 include ../layouts/flow-item.pug
 
 block title
@@ -37,3 +38,5 @@ block content
             +category-gallery(categories)
         +flow-item("why-direct")
             +why-direct(benefits, directCopy)
+        +flow-item("contact")
+            +contact

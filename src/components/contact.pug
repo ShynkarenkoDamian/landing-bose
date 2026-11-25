@@ -1,0 +1,45 @@
+include ./field.pug
+include ./button.pug
+
+mixin contact
+    section.contact.l-grid(aria-label="Contact us")
+        .contact__heading
+            +section-title("Contact us")
+        form.contact__form(action="/contact" method="post")
+            +field({
+                variant: "input",
+                label: "Name",
+                name: "name",
+                type: "text",
+                autocomplete: "name",
+                required: true,
+            })
+            +field({
+                variant: "input",
+                label: "Email",
+                name: "email",
+                type: "email",
+                autocomplete: "email",
+                required: true,
+            })
+            +field({ variant: "textarea", label: "Message", name: "message", autocomplete: "off", required: true })
+            .contact__action
+                +button("Send", ["solid", "full"], null, "submit")
+        dl.contact__details
+            .contact__item
+                dt.contact__label Phone
+                dd.contact__value
+                    a.contact__value-link(href="tel:+12345555555") +1 234 5555-55-55
+            .contact__item
+                dt.contact__label Email
+                dd.contact__value
+                    a.contact__value-link(href="mailto:hello@miami.com") hello@miami.com
+            .contact__item
+                dt.contact__label Address
+                dd.contact__value
+                    address.contact__address
+                        | 400 first ave.
+                        br
+                        | suite 700
+                        br
+                        | Minneapolis, MN 55401
