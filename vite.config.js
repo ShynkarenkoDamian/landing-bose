@@ -6,6 +6,7 @@ export default {
     base: "/landing-bose/",
     build: {
         assetsInlineLimit: 0,
+        cssMinify: false,
     },
     plugins: [
         vituum({

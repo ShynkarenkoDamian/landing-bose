@@ -12,6 +12,15 @@
     "selector-max-id": 0,
     "declaration-no-important": true,
     "scss/dollar-variable-empty-line-before": null,
-    "number-max-precision": null
-  }
+    "number-max-precision": null,
+    "selector-max-type": 0
+  },
+  "overrides": [
+    {
+      "files": ["src/styles/base/**/*.scss", "src/styles/reset/**/*.scss"],
+      "rules": {
+        "selector-max-type": null
+      }
+    }
+  ]
 }

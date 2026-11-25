@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "postbuild": "node scripts/check-layered-css.mjs",
     "images": "node scripts/images.mjs",
     "optimize:svg": "node scripts/optimize-svg.mjs",
     "preview": "vite preview",
@@ -32,6 +33,7 @@
     "autoprefixer": "^10.6.2",
     "husky": "^9.1.7",
     "lint-staged": "^17.6.1",
+    "postcss": "^8.5.33",
     "prettier": "^3.10.1",
     "sass": "^1",
     "sharp": "^0.35.5",

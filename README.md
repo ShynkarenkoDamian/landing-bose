@@ -18,4 +18,22 @@
 
 Стилі розкладені за шарами `reset`, `base`, `layout`, `components` та `utilities`. Усі правила оголошуються всередині відповідного `@layer`. Брейкпоінти описані в токенах і використовуються через mobile-first міксин `mq()`.
 
+Шари оголошені в `abstracts/_layers.scss` до підключення решти SCSS. Пізніший шар перемагає раніший для звичайних декларацій навіть за меншої специфічності:
+
+```scss
+@layer components {
+  .button.button {
+    color: var(--color-text);
+  }
+}
+
+@layer utilities {
+  .u-text-primary {
+    color: var(--color-contact-value);
+  }
+}
+```
+
+`utilities` іде після `components`, тому його правило перемагає.
+
 Вихідні фотографії зберігаються в `src/assets/images/original/`. Скрипт `npm run images` створює варіанти в `src/assets/images/optimized/`; зображення, менші за ширину варіанта, не збільшуються.
