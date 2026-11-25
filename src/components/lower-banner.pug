@@ -1,0 +1,15 @@
+include ./responsive-picture.pug
+
+mixin lower-banner
+    section.lower-banner.l-bleed(aria-label="Bose audio image")
+        +responsive-picture(
+            "banner-bottom",
+            [160, 320, 640, 744, 1260],
+            "jpg",
+            1260,
+            456,
+            "100vw",
+            "Woman wearing Bose earbuds, looking upwards",
+            "lower-banner__image",
+            "lower-banner__picture",
+        )

@@ -22,6 +22,10 @@
     padding-block-start: var(--space-section);
   }
 
+  .l-flow__item--lower-banner {
+    padding-block-start: var(--space-section);
+  }
+
   @include abstracts.mq(tablet-reference) {
     .l-flow__item--recommended {
       padding-block-start: var(--space-section);
@@ -29,6 +33,16 @@
 
     .l-flow__item--category-gallery {
       padding-block-start: var(--space-section);
+    }
+
+    .l-flow__item--lower-banner {
+      padding-block-start: var(--space-section);
+    }
+  }
+
+  @include abstracts.mq(desktop-reference) {
+    .l-flow__item--lower-banner {
+      padding-block-start: var(--space-banner-desktop-gap);
     }
   }
 }

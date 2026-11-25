@@ -12,6 +12,7 @@ include ../components/recommended.pug
 include ../components/category-gallery.pug
 include ../components/why-direct.pug
 include ../components/contact.pug
+include ../components/lower-banner.pug
 include ../layouts/flow-item.pug
 
 block title
@@ -40,3 +41,5 @@ block content
             +why-direct(benefits, directCopy)
         +flow-item("contact")
             +contact
+        +flow-item("lower-banner")
+            +lower-banner

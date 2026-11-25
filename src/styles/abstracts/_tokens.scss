@@ -105,6 +105,9 @@ $sizes: (
   hero-height-mobile: 568px,
   hero-height-tablet: 992px,
   hero-height-desktop: 720px,
+  banner-height-mobile: 200px,
+  banner-height-tablet: 400px,
+  banner-height-desktop: 456px,
   menu-height-mobile: 568px,
   menu-height-tablet: 992px,
   menu-height-desktop: 700px,
@@ -142,6 +145,7 @@ $sizes: (
   burger-line-long-wide: 24px,
   burger-line-mid-wide: 12px,
   hero-content-bottom-wide: 64px,
+  banner-desktop-gap: 118px,
 );
 
 $z-index: (
