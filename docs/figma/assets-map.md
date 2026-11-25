@@ -30,15 +30,34 @@ Production image sources are in `src/assets/`. Figma-only references are in `doc
 | `src/assets/icons/Icons & Logo.svg`                     | Reference sheet with phone, default and hover burger, close icon, and Bose wordmark | `docs/figma/reference/icons-and-logo-sheet.svg`                   | 280 × 256 px       |
 | `src/assets/icons/image 4.svg`                          | Bose wordmark; the SVG contains an embedded raster image                            | `src/assets/logo/logo.svg`                                        | 127 × 16 px        |
 
+## Newly inspected image exports
+
+| Previous path                          | New path                                   | What the image shows                             |   Dimensions | Spec usage                                                                      |
+| -------------------------------------- | ------------------------------------------ | ------------------------------------------------ | -----------: | ------------------------------------------------------------------------------- |
+| `src/assets/images/original/item1.png` | `src/assets/images/original/product-1.png` | Bose portable smart speaker with handle          | 392 × 392 px | Recommended, product 1; all three page widths: 320, 744, and 1260 px            |
+| `src/assets/images/original/item2.png` | `src/assets/images/original/product-2.png` | SoundLink Flex-style horizontal portable speaker | 392 × 392 px | Recommended, product 2; all three page widths: 320, 744, and 1260 px            |
+| `src/assets/images/original/item3.png` | `src/assets/images/original/product-3.png` | SoundLink Color-style compact speaker            | 392 × 392 px | Recommended, product 3; all three page widths: 320, 744, and 1260 px            |
+| `src/assets/logo/image 4.png`          | `src/assets/images/original/bose-logo.png` | Bose wordmark with transparent background        |  571 × 72 px | Header logo at 320, 744, and 1260 px; the spec's source export is 2000 × 251 px |
+
+The product roles match the order and imagery of the three Recommended products in the spec. Their pixels are square and larger than the spec's 320 × 272/273 px source exports.
+
+## Additional raster exports
+
+| Previous path                 | What the image shows                                  | Current path                               |     Dimensions | Spec usage                                                                            |
+| ----------------------------- | ----------------------------------------------------- | ------------------------------------------ | -------------: | ------------------------------------------------------------------------------------- |
+| `src/assets/logo/Hero.jpg`    | Woman wearing over-ear headphones against a pale sky  | `src/assets/logo/Hero.jpg`                 | 2880 × 2204 px | Helper hero crop reference; no page hero export assigned                              |
+| `src/assets/logo/banner.jpg`  | Woman wearing an earbud; lower-banner image candidate | `src/assets/logo/banner.jpg`               | 2880 × 1220 px | Lower-banner candidate for 320, 744, and 1260 px; exact production source unconfirmed |
+| `src/assets/logo/image 4.png` | Bose wordmark with transparent background             | `src/assets/images/original/bose-logo.png` |    571 × 72 px | Logo is shown in all three headers; spec source is 2000 × 251 px                      |
+
 ## Needs confirmation
 
-| Current path                               | What I see                                                                                           | Why it remains unchanged                                                                                                                                                       |
-| ------------------------------------------ | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `src/assets/images/original/Image (1).png` | Woman wearing an earbud, used as the background in the lower-banner crop guide                       | It is 1440 × 610 px, while the spec identifies a shared 1920 × 1080 px JPEG source. I cannot confirm whether this is the production banner or only a cropped reference export. |
-| `src/assets/images/original/image.png`     | Woman wearing over-ear headphones against a pale sky; the same photo appears in the hero crop guides | It is 1440 × 1102 px, while the spec identifies a separate 2304 × 1536 px source and three other hero exports. I cannot confirm which source role this file has.               |
+| Current path                 | What needs confirmation                                                 | Why it remains unchanged                                                                                                                  |
+| ---------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `src/assets/logo/Hero.jpg`   | Whether this is only the helper crop source or a production hero source | It is 2880 × 2204 px; the spec records a 2304 × 1536 px helper image and three separate page hero exports.                                |
+| `src/assets/logo/banner.jpg` | Whether this is the full production banner source                       | It is 2880 × 1220 px, while the spec records a 1920 × 1080 px source. Its aspect ratio matches the 1440 × 610 px crop-guide canvas at 2×. |
 
 ## Referenced resources not found in the current export
 
-The spec describes three page hero PNGs (640 × 1136, 1488 × 1984, and 2520 × 1440), three recommended-product photos (320 × 272/273), an extra sunglasses photo (259 × 194), a 1920 × 1080 lower-banner source, a 2000 × 251 logo PNG, and a 486 × 534 grid-settings screenshot. These exact-sized resources are not present in `src/assets/`. The six category photos are present by visual content, but at smaller/different dimensions than their source sizes in the spec.
+The three Recommended product photos are now present as `product-1.png` through `product-3.png` and are used in that section at 320, 744, and 1260 px. Their current dimensions are 392 × 392 px each; the spec records 320 × 272/273 px exports. The source-sized assets described by the spec that are still absent are the three page hero PNGs (640 × 1136, 1488 × 1984, and 2520 × 1440), the extra sunglasses photo (259 × 194), the 1920 × 1080 lower-banner JPEG, the 2000 × 251 logo PNG, and the 486 × 534 grid-settings screenshot. `Hero.jpg` and `banner.jpg` are available candidates but remain unconfirmed because their dimensions differ from the corresponding spec resources. A smaller 571 × 72 px raster Bose wordmark is present at `src/assets/images/original/bose-logo.png`. The six category photos match by visual content but have smaller or differently cropped dimensions than the spec sources.
 
-The burger-hover artwork is visible in `icons-and-logo-sheet.svg`. A separate hover SVG was not made; the hover state can be drawn from CSS bars. `icon-close.svg` is extracted from the close glyph in the reference sheet. Standalone icon fills use `currentColor`; the logo and reference sheet retain their source colors. Until the two image roles are confirmed, the optimizer writes their variants with `unconfirmed-banner-photo-…` and `unconfirmed-hero-photo-…` prefixes.
+The burger-hover artwork is visible in `docs/figma/reference/icons-and-logo-sheet.svg`. A separate hover SVG was not made; the hover state can be drawn from CSS bars. `icon-close.svg` is extracted from the close glyph in the reference sheet. Standalone icon fills use `currentColor`; the logo and reference sheet retain their source colors. The logo SVG wrapper embeds raster data and is not a vector wordmark. No vector Bose wordmark is present in the available production assets.
