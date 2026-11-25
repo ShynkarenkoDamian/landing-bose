@@ -34,6 +34,10 @@
       --size-#{$name}: #{$value};
     }
 
+    @each $name, $value in tokens.$z-index {
+      --z-#{$name}: #{$value};
+    }
+
     @each $name, $value in tokens.$radii {
       --radius-#{$name}: #{$value};
     }

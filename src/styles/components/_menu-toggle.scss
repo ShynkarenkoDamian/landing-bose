@@ -1,0 +1,128 @@
+@use '../abstracts' as abstracts;
+
+@layer components {
+  .menu-toggle {
+    position: relative;
+    display: grid;
+    width: var(--size-burger-container-mobile);
+    height: var(--size-burger-container-mobile);
+    flex: 0 0 auto;
+    place-items: center;
+    color: var(--color-text);
+    cursor: pointer;
+  }
+
+  .menu-toggle__input {
+    position: absolute;
+    z-index: 1;
+    inset: var(--space-none);
+    width: 100%;
+    height: 100%;
+    margin: var(--space-none);
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .menu-toggle__burger,
+  .menu-toggle__close {
+    position: absolute;
+    display: grid;
+    place-items: center;
+  }
+
+  .menu-toggle__hover {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-icon-gap);
+    align-items: flex-start;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .menu-toggle__line {
+    height: var(--size-burger-line-height);
+    border-radius: var(--radius-icon);
+    background-color: currentcolor;
+  }
+
+  .menu-toggle__line:nth-child(1) {
+    width: var(--size-burger-line-short);
+  }
+
+  .menu-toggle__line:nth-child(2) {
+    width: var(--size-burger-line-long);
+  }
+
+  .menu-toggle__line:nth-child(3) {
+    width: var(--size-burger-line-mid);
+  }
+
+  .menu-toggle__close {
+    width: var(--size-close-icon-mobile);
+    height: var(--size-close-icon-mobile);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .menu-toggle__input:checked ~ .menu-toggle__burger {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .menu-toggle__input:checked ~ .menu-toggle__close {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .menu-toggle__input:focus-visible ~ .menu-toggle__burger,
+  .menu-toggle__input:focus-visible ~ .menu-toggle__close {
+    outline: var(--size-focus-ring) solid currentcolor;
+    outline-offset: var(--space-icon);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .menu-toggle:hover .icon--burger {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .menu-toggle:hover .menu-toggle__hover {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  @include abstracts.mq(tablet-reference) {
+    .menu-toggle {
+      width: var(--size-burger-container-wide);
+      height: var(--size-burger-container-wide);
+    }
+
+    .menu-toggle__hover {
+      transform: scale(1.3333333333333333);
+      transform-origin: left center;
+    }
+
+    .menu-toggle__line {
+      height: var(--size-burger-line-height-wide);
+    }
+
+    .menu-toggle__line:nth-child(1) {
+      width: var(--size-burger-line-short-wide);
+    }
+
+    .menu-toggle__line:nth-child(2) {
+      width: var(--size-burger-line-long-wide);
+    }
+
+    .menu-toggle__line:nth-child(3) {
+      width: var(--size-burger-line-mid-wide);
+    }
+
+    .menu-toggle__close {
+      width: var(--size-close-icon-wide);
+      height: var(--size-close-icon-wide);
+    }
+  }
+}

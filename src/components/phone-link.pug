@@ -1,0 +1,8 @@
+mixin phone-link(number, href, modifier, elementClass)
+    a(
+        class=["phone-link", `phone-link--${modifier}`, ...(elementClass ? [elementClass] : [])]
+        href=href
+        aria-label=`Call ${number}`
+    )
+        span.phone-link__number= number
+        +icon("phone")

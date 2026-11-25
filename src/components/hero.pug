@@ -1,0 +1,63 @@
+mixin hero
+    section.hero.l-bleed(aria-label="The world shades. Your music shines.")
+        picture.hero__picture
+            source(
+                media="(min-width: 1260px)"
+                type="image/avif"
+                srcset="/src/assets/images/optimized/hero-desktop-160.avif 160w, /src/assets/images/optimized/hero-desktop-320.avif 320w, /src/assets/images/optimized/hero-desktop-640.avif 640w, /src/assets/images/optimized/hero-desktop-744.avif 744w, /src/assets/images/optimized/hero-desktop-1260.avif 1260w"
+                sizes="100vw"
+            )
+            source(
+                media="(min-width: 1260px)"
+                type="image/webp"
+                srcset="/src/assets/images/optimized/hero-desktop-160.webp 160w, /src/assets/images/optimized/hero-desktop-320.webp 320w, /src/assets/images/optimized/hero-desktop-640.webp 640w, /src/assets/images/optimized/hero-desktop-744.webp 744w, /src/assets/images/optimized/hero-desktop-1260.webp 1260w"
+                sizes="100vw"
+            )
+            source(
+                media="(min-width: 1260px)"
+                type="image/jpeg"
+                srcset="/src/assets/images/optimized/hero-desktop-160.jpg 160w, /src/assets/images/optimized/hero-desktop-320.jpg 320w, /src/assets/images/optimized/hero-desktop-640.jpg 640w, /src/assets/images/optimized/hero-desktop-744.jpg 744w, /src/assets/images/optimized/hero-desktop-1260.jpg 1260w"
+                sizes="100vw"
+            )
+            source(
+                media="(min-width: 744px)"
+                type="image/avif"
+                srcset="/src/assets/images/optimized/hero-tablet-160.avif 160w, /src/assets/images/optimized/hero-tablet-320.avif 320w, /src/assets/images/optimized/hero-tablet-640.avif 640w, /src/assets/images/optimized/hero-tablet-744.avif 744w"
+                sizes="100vw"
+            )
+            source(
+                media="(min-width: 744px)"
+                type="image/webp"
+                srcset="/src/assets/images/optimized/hero-tablet-160.webp 160w, /src/assets/images/optimized/hero-tablet-320.webp 320w, /src/assets/images/optimized/hero-tablet-640.webp 640w, /src/assets/images/optimized/hero-tablet-744.webp 744w"
+                sizes="100vw"
+            )
+            source(
+                media="(min-width: 744px)"
+                type="image/jpeg"
+                srcset="/src/assets/images/optimized/hero-tablet-160.jpg 160w, /src/assets/images/optimized/hero-tablet-320.jpg 320w, /src/assets/images/optimized/hero-tablet-640.jpg 640w, /src/assets/images/optimized/hero-tablet-744.jpg 744w"
+                sizes="100vw"
+            )
+            source(
+                type="image/avif"
+                srcset="/src/assets/images/optimized/hero-mobile-160.avif 160w, /src/assets/images/optimized/hero-mobile-320.avif 320w"
+                sizes="100vw"
+            )
+            source(
+                type="image/webp"
+                srcset="/src/assets/images/optimized/hero-mobile-160.webp 160w, /src/assets/images/optimized/hero-mobile-320.webp 320w"
+                sizes="100vw"
+            )
+            img.hero__image(
+                src="/src/assets/images/optimized/hero-mobile-320.jpg"
+                srcset="/src/assets/images/optimized/hero-mobile-160.jpg 160w, /src/assets/images/optimized/hero-mobile-320.jpg 320w"
+                sizes="100vw"
+                width="320"
+                height="568"
+                alt=""
+                fetchpriority="high"
+            )
+        .hero__content.l-grid
+            +icon("sound-wave", "hero__sound-wave")
+            h1.hero__title
+                span.hero__line The world shades.
+                span.hero__line Your music shines.

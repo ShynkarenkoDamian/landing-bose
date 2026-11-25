@@ -1,0 +1,105 @@
+@use '../abstracts' as abstracts;
+
+@layer components {
+  .nav--menu {
+    position: fixed;
+    z-index: var(--z-menu-panel);
+    inset: var(--space-none);
+    height: var(--size-menu-height-mobile);
+    overflow-y: auto;
+    background-color: var(--color-menu);
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
+
+  .site-header__inner:has(.menu-toggle__input:checked) .nav--menu {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+  }
+
+  .nav__content {
+    position: relative;
+    z-index: var(--z-menu-content);
+    align-content: start;
+    padding-block-start: var(--size-nav-top-mobile);
+    row-gap: var(--space-none);
+  }
+
+  .nav__list {
+    display: grid;
+    grid-column: 1;
+    gap: var(--space-group-gap);
+    margin: var(--space-none);
+    padding: var(--space-none);
+    list-style: none;
+  }
+
+  .nav__link {
+    position: relative;
+    display: inline-flex;
+    min-height: var(--size-nav-link-height);
+    align-items: center;
+    color: var(--color-text);
+    font-size: var(--font-size-navigation);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-navigation);
+    letter-spacing: var(--letter-spacing-navigation);
+    text-decoration: none;
+  }
+
+  .nav__link::after {
+    position: absolute;
+    inset-block-end: calc(var(--space-icon) * -1);
+    inset-inline: var(--space-none);
+    height: var(--size-field-border);
+    background-color: currentcolor;
+    content: '';
+    opacity: 0;
+  }
+
+  .nav__link:hover::after,
+  .nav__link:focus-visible::after {
+    opacity: 1;
+  }
+
+  .nav__link:focus-visible {
+    outline: var(--size-focus-ring) solid currentcolor;
+    outline-offset: var(--space-icon);
+  }
+
+  .nav__phone {
+    grid-column: 1;
+    width: max-content;
+    margin-block-start: var(--space-card-gap);
+  }
+
+  .nav__call-to-order {
+    grid-column: 1;
+    width: var(--size-call-to-order-width);
+    margin-block-start: var(--space-menu-cta-gap);
+  }
+
+  @include abstracts.mq(tablet-reference) {
+    .nav--menu {
+      height: var(--size-menu-height-tablet);
+    }
+
+    .nav__content {
+      padding-block-start: var(--size-nav-top-wide);
+    }
+  }
+
+  @include abstracts.mq(desktop-reference) {
+    .nav--menu {
+      height: var(--size-menu-height-desktop);
+    }
+
+    .nav__list,
+    .nav__phone,
+    .nav__call-to-order {
+      margin-inline-start: var(--size-nav-desktop-offset);
+    }
+  }
+}

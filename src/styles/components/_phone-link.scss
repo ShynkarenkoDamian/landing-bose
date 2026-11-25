@@ -1,0 +1,72 @@
+@use '../abstracts' as abstracts;
+
+@layer components {
+  .phone-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .phone-link__number {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .phone-link--header {
+    width: var(--size-phone-container-mobile);
+    height: var(--size-phone-container-mobile);
+    justify-content: center;
+  }
+
+  .phone-link--header .phone-link__number {
+    width: var(--space-none);
+    max-width: var(--space-none);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .phone-link--menu {
+    color: var(--color-text);
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-copy);
+  }
+
+  .phone-link--menu .icon {
+    display: none;
+  }
+
+  .phone-link:focus-visible {
+    outline: var(--size-focus-ring) solid var(--color-text);
+    outline-offset: var(--space-icon);
+  }
+
+  @include abstracts.mq(tablet-reference) {
+    .phone-link--header {
+      width: var(--size-phone-container-wide);
+      height: var(--size-phone-container-wide);
+    }
+  }
+
+  @include abstracts.mq(desktop-reference) {
+    .phone-link--header .phone-link__number {
+      width: auto;
+      max-width: var(--space-none);
+      margin-inline-end: var(--space-none);
+      font-size: var(--font-size-small);
+      font-weight: var(--font-weight-medium);
+      line-height: var(--line-height-copy);
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .phone-link--header:hover .phone-link__number,
+    .phone-link--header:focus-visible .phone-link__number {
+      max-width: var(--size-phone-number-open-width);
+      margin-inline-end: var(--space-control-label);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}

@@ -3,9 +3,22 @@ include ../components/section-title.pug
 include ../components/button.pug
 include ../components/field.pug
 include ../components/icon.pug
+include ../components/phone-link.pug
+include ../components/menu-toggle.pug
+include ../components/nav.pug
+include ../components/site-header.pug
+include ../components/hero.pug
 
 block title
     | Bose
 
 block content
+    - const menuItems = [];
+    - menuItems.push({ label: "HOME", href: "/" });
+    - menuItems.push({ label: "RECOMMENDED", href: "#" });
+    - menuItems.push({ label: "CATEGORIES", href: "#" });
+    - menuItems.push({ label: "HOW TO BUY", href: "#" });
+    - menuItems.push({ label: "CONTACTS", href: "#" });
+    +site-header(menuItems)
     main
+        +hero

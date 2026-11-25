@@ -1,0 +1,10 @@
+mixin menu-toggle
+    label.menu-toggle
+        input.menu-toggle__input(type="checkbox" aria-label="Toggle menu")
+        span.menu-toggle__burger
+            +icon("burger")
+            span.menu-toggle__hover(aria-hidden="true")
+                span.menu-toggle__line
+                span.menu-toggle__line
+                span.menu-toggle__line
+        +icon("close", "menu-toggle__close")

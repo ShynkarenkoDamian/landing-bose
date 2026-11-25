@@ -1,0 +1,61 @@
+@use '../abstracts' as abstracts;
+
+@layer components {
+  .site-header {
+    position: absolute;
+    z-index: var(--z-menu-header);
+    inset-block-start: var(--space-none);
+    inset-inline: var(--space-none);
+  }
+
+  .site-header__inner {
+    position: relative;
+    padding-block: var(--space-header-mobile-padding);
+    align-items: center;
+  }
+
+  .site-header__logo {
+    position: relative;
+    z-index: var(--z-menu-content);
+    display: block;
+    grid-column: 1;
+    width: var(--size-logo-width-mobile);
+    line-height: var(--line-height-title);
+  }
+
+  .site-header__image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .site-header__actions {
+    position: relative;
+    z-index: var(--z-menu-content);
+    display: flex;
+    grid-column: 2;
+    align-items: center;
+    justify-self: end;
+    gap: var(--space-layout-gutter);
+  }
+
+  @include abstracts.mq(tablet-reference) {
+    .site-header__inner {
+      padding-block: var(--space-header-wide-padding);
+    }
+
+    .site-header__logo {
+      width: var(--size-logo-width-wide);
+    }
+
+    .site-header__actions {
+      gap: var(--space-group-gap);
+    }
+  }
+
+  @include abstracts.mq(desktop-reference) {
+    .site-header__inner:has(.menu-toggle__input:checked) .phone-link--header {
+      visibility: hidden;
+    }
+  }
+}

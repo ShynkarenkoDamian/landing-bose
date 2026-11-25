@@ -1,0 +1,27 @@
+mixin site-header(menuItems)
+    header.site-header.l-bleed
+        .site-header__inner.l-grid
+            a.site-header__logo(href="/" aria-label="Bose home")
+                picture
+                    source(
+                        type="image/avif"
+                        srcset="/src/assets/images/optimized/bose-logo-125.avif 125w, /src/assets/images/optimized/bose-logo-188.avif 188w, /src/assets/images/optimized/bose-logo-250.avif 250w, /src/assets/images/optimized/bose-logo-376.avif 376w, /src/assets/images/optimized/bose-logo-571.avif 571w"
+                        sizes="(min-width: 744px) 188px, 125px"
+                    )
+                    source(
+                        type="image/webp"
+                        srcset="/src/assets/images/optimized/bose-logo-125.webp 125w, /src/assets/images/optimized/bose-logo-188.webp 188w, /src/assets/images/optimized/bose-logo-250.webp 250w, /src/assets/images/optimized/bose-logo-376.webp 376w, /src/assets/images/optimized/bose-logo-571.webp 571w"
+                        sizes="(min-width: 744px) 188px, 125px"
+                    )
+                    img.site-header__image(
+                        src="/src/assets/images/optimized/bose-logo-125.png"
+                        srcset="/src/assets/images/optimized/bose-logo-125.png 125w, /src/assets/images/optimized/bose-logo-188.png 188w, /src/assets/images/optimized/bose-logo-250.png 250w, /src/assets/images/optimized/bose-logo-376.png 376w, /src/assets/images/optimized/bose-logo-571.png 571w"
+                        sizes="(min-width: 744px) 188px, 125px"
+                        width="571"
+                        height="72"
+                        alt="BOSE"
+                    )
+            .site-header__actions
+                +phone-link("+1 234 555-55-55", "tel:+1234555555", "header")
+                +menu-toggle
+            +nav(menuItems)

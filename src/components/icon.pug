@@ -1,2 +1,2 @@
-mixin icon(name)
-    span(class=`icon icon--${name}` aria-hidden="true")
+mixin icon(name, elementClass)
+    span(class=["icon", `icon--${name}`, ...(elementClass ? [elementClass] : [])] aria-hidden="true")
