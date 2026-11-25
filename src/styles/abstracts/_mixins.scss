@@ -1,0 +1,14 @@
+@use 'sass:map';
+@use 'tokens' as tokens;
+
+@mixin mq($bp) {
+  $min-width: map.get(tokens.$breakpoints, $bp);
+
+  @if not $min-width {
+    @error 'Unknown breakpoint `#{$bp}`. Use one of: #{map.keys(tokens.$breakpoints)}.';
+  }
+
+  @media (min-width: $min-width) {
+    @content;
+  }
+}
