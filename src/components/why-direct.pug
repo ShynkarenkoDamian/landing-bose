@@ -1,0 +1,9 @@
+mixin why-direct(benefits, copy)
+    section.why-direct.l-grid(aria-label="Why buy direct from Bose")
+        .why-direct__heading
+            +section-title("Why buy direct from Bose", "left")
+        .why-direct__content
+            ul.why-direct__benefits
+                each benefit in benefits
+                    li.why-direct__benefit= benefit.text
+            p.why-direct__copy= copy

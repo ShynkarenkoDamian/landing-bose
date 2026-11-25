@@ -1,0 +1,61 @@
+@use '../abstracts' as abstracts;
+
+@layer components {
+  .why-direct {
+    row-gap: var(--space-none);
+  }
+
+  .why-direct__heading,
+  .why-direct__content {
+    grid-column: 1 / -1;
+  }
+
+  .why-direct__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-card-gap);
+    margin-block-start: var(--space-group-gap);
+  }
+
+  .why-direct__benefits {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-form-gap);
+    margin: var(--space-none);
+    padding: var(--space-none);
+    color: var(--color-text);
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-body);
+    list-style: none;
+  }
+
+  .why-direct__copy {
+    margin: var(--space-none);
+    color: var(--color-text);
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-copy);
+  }
+
+  @include abstracts.mq(tablet-reference) {
+    .why-direct__heading {
+      grid-column: 1 / span 3;
+    }
+
+    .why-direct__content {
+      grid-column: 4 / span 3;
+      margin-block-start: var(--space-none);
+    }
+  }
+
+  @include abstracts.mq(desktop-reference) {
+    .why-direct__heading {
+      grid-column: 1 / span 5;
+    }
+
+    .why-direct__content {
+      grid-column: 6 / span 5;
+    }
+  }
+}

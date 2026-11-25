@@ -10,6 +10,7 @@ include ../components/site-header.pug
 include ../components/hero.pug
 include ../components/recommended.pug
 include ../components/category-gallery.pug
+include ../components/why-direct.pug
 include ../layouts/flow-item.pug
 
 block title
@@ -24,6 +25,8 @@ block content
     - menuItems.push({ label: "CONTACTS", href: "#" });
     - const products = [{ image: "product-1", name: "Bose portable Smart speaker", type: "Smart home", price: "$ 399.00", alt: "Bose portable Smart speaker with handle" }, { image: "product-2", name: "SoundLink Flex Bluetooth speaker", type: "Portable bluetooth", price: "$ 149.00", alt: "SoundLink Flex Bluetooth speaker" }, { image: "product-3", name: "SoundLink Color Bluetooth speaker II", type: "Portable bluetooth", price: "$ 129.00", alt: "SoundLink Color Bluetooth speaker II", mobileBreak: true }];
     - const categories = [{ label: "Headphones & earbuds", layout: "wide-left", firstImage: "category-headphones-wide", secondImage: "category-headphones-narrow", firstAlt: "Woman wearing Bose earbuds", secondAlt: "Woman wearing Bose over-ear headphones while taking a photograph" }, { label: "Speakers", layout: "wide-left", firstImage: "category-speakers-wide", secondImage: "category-speakers-narrow", firstAlt: "Person holding a Bose portable speaker", secondAlt: "Blue Bose portable speaker" }, { label: "Audio sunglasses", layout: "narrow-left", firstImage: "category-sunglasses-narrow", secondImage: "category-sunglasses-wide", firstAlt: "Man wearing Bose audio sunglasses", secondAlt: "Woman wearing Bose audio sunglasses" }];
+    - const benefits = [{ text: "Free 2-day shipping and returns" }, { text: "90-day risk-free trial" }, { text: "World class customer service" }, { text: "My Bose account management" }];
+    - const directCopy = "A great product is more than what’s in the box. It’s a promise of premium performance, world-class support, and everything you expect from a trusted brand. It’s just one of many reasons why you’ll shop with confidence on Bose.com.";
     +site-header(menuItems)
     main.l-flow
         +flow-item("hero")
@@ -32,3 +35,5 @@ block content
             +recommended(products)
         +flow-item("category-gallery")
             +category-gallery(categories)
+        +flow-item("why-direct")
+            +why-direct(benefits, directCopy)
