@@ -1,0 +1,65 @@
+@layer components {
+  .field {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+
+  .field__label {
+    position: absolute;
+    overflow: hidden;
+    width: var(--size-field-border);
+    height: var(--size-field-border);
+    padding: var(--space-none);
+    border: var(--space-none);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .field__control {
+    display: block;
+    width: 100%;
+    border: var(--size-field-border) solid transparent;
+    background-color: var(--color-field);
+    color: var(--color-text);
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-hint);
+  }
+
+  .field__control::placeholder {
+    color: var(--color-placeholder);
+    opacity: 1;
+  }
+
+  .field--input .field__control {
+    height: var(--size-field-height);
+    padding: var(--space-control-padding) var(--space-form-gap);
+    border-radius: var(--radius-control);
+  }
+
+  .field--textarea .field__control {
+    height: var(--size-textarea-height);
+    padding: var(--space-control-padding) var(--space-form-gap);
+    border-radius: var(--radius-textarea);
+    resize: none;
+  }
+
+  .field__control:hover {
+    border-color: var(--color-field-hover-border);
+  }
+
+  .field__control:focus-visible {
+    border-color: var(--color-text);
+    outline: var(--space-none);
+  }
+
+  .field__control:not(:placeholder-shown) {
+    color: var(--color-text);
+  }
+
+  .field__control:user-invalid {
+    border-color: var(--color-text);
+  }
+}

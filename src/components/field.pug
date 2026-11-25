@@ -1,0 +1,19 @@
+mixin field(options)
+    label(class=`field field--${options.variant}`)
+        span.field__label= options.label
+        if options.variant === "textarea"
+            textarea.field__control(
+                name=options.name
+                rows="5"
+                placeholder=options.label
+                autocomplete=options.autocomplete
+                required=options.required
+            )
+        else
+            input.field__control(
+                type=options.type
+                name=options.name
+                placeholder=options.label
+                autocomplete=options.autocomplete
+                required=options.required
+            )

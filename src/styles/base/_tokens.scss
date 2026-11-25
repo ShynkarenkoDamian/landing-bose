@@ -30,6 +30,10 @@
       --space-#{$name}: #{$value};
     }
 
+    @each $name, $value in tokens.$sizes {
+      --size-#{$name}: #{$value};
+    }
+
     @each $name, $value in tokens.$radii {
       --radius-#{$name}: #{$value};
     }

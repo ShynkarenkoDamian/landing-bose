@@ -1,0 +1,68 @@
+@layer components {
+  .button {
+    display: inline-flex;
+    min-height: var(--size-button-height);
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-none) var(--space-heading-gap);
+    border: var(--space-none) solid transparent;
+    border-radius: var(--radius-control);
+    color: var(--color-white);
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-copy);
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .button--solid {
+    background-color: var(--color-text);
+  }
+
+  .button--outline {
+    border: var(--size-button-border) solid var(--color-text);
+    background-color: transparent;
+    color: var(--color-text);
+  }
+
+  .button--reference-hover {
+    border: var(--size-button-border) solid var(--color-text);
+    background-color: transparent;
+    color: var(--color-text);
+  }
+
+  .button--menu {
+    min-height: var(--space-none);
+    padding: var(--space-none);
+    border: var(--space-none);
+    border-bottom: var(--size-field-border) solid currentcolor;
+    border-radius: var(--radius-square);
+    background-color: transparent;
+    color: var(--color-text);
+    font-size: var(--font-size-caption);
+    line-height: var(--size-menu-cta-line-height);
+    letter-spacing: var(--letter-spacing-navigation);
+  }
+
+  .button--full {
+    width: 100%;
+  }
+
+  .button:not(.button--menu):hover {
+    border: var(--size-button-border) solid var(--color-text);
+    background-color: transparent;
+    color: var(--color-text);
+  }
+
+  .button:focus-visible {
+    outline: var(--size-focus-ring) solid var(--color-text);
+    outline-offset: var(--space-icon);
+  }
+
+  .button:not(.button--menu):active {
+    border-color: var(--color-button-pressed);
+    background-color: var(--color-button-pressed);
+    color: var(--color-white);
+  }
+}

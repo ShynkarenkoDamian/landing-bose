@@ -1,0 +1,32 @@
+@use '../abstracts' as abstracts;
+
+@layer components {
+  .section-title {
+    margin: var(--space-none);
+    color: var(--color-text);
+    font-size: var(--font-size-heading-mobile);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-title);
+    letter-spacing: var(--letter-spacing-display);
+  }
+
+  .section-title--center {
+    text-align: center;
+  }
+
+  .section-title--left {
+    text-align: left;
+  }
+
+  @include abstracts.mq(tablet-reference) {
+    .section-title {
+      font-size: var(--font-size-heading-tablet);
+    }
+  }
+
+  @include abstracts.mq(desktop-reference) {
+    .section-title {
+      font-size: var(--font-size-heading-desktop);
+    }
+  }
+}

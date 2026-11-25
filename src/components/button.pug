@@ -1,0 +1,6 @@
+mixin button(text, modifiers, href, type = "button")
+    - const buttonClasses = ["button", ...(modifiers || []).map((modifier) => `button--${modifier}`)];
+    if href
+        a(class=buttonClasses href=href)= text
+    else
+        button(class=buttonClasses type=type)= text

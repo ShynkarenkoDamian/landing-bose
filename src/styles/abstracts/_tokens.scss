@@ -73,6 +73,24 @@ $spacing: (
   desktop-margin: 120px,
 );
 
+$sizes: (
+  button-height: 56px,
+  button-border: 3px,
+  field-height: 48px,
+  textarea-height: 148px,
+  field-border: 1px,
+  focus-ring: 2px,
+  phone-icon: 18px,
+  burger-icon-width: 18px,
+  burger-icon-height: 12px,
+  close-icon: 24px,
+  sound-wave-width: 48px,
+  sound-wave-height: 58px,
+  sound-wave-width-large: 63px,
+  sound-wave-height-large: 76px,
+  menu-cta-line-height: 16px,
+);
+
 $radii: (
   square: 0px,
   icon: 2px,

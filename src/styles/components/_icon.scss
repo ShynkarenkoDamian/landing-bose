@@ -1,0 +1,59 @@
+@use '../abstracts' as abstracts;
+
+@layer components {
+  .icon {
+    display: inline-block;
+    flex: 0 0 auto;
+    background-color: currentcolor;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    vertical-align: middle;
+  }
+
+  .icon--phone {
+    width: var(--size-phone-icon);
+    height: var(--size-phone-icon);
+    mask-image: url('../../assets/icons/icon-phone.svg');
+  }
+
+  .icon--burger {
+    width: var(--size-burger-icon-width);
+    height: var(--size-burger-icon-height);
+    mask-image: url('../../assets/icons/icon-burger.svg');
+  }
+
+  .icon--close {
+    width: var(--size-close-icon);
+    height: var(--size-close-icon);
+    mask-image: url('../../assets/icons/icon-close.svg');
+  }
+
+  .icon--sound-wave {
+    width: var(--size-sound-wave-width);
+    height: var(--size-sound-wave-height);
+    mask-image: url('../../assets/icons/icon-sound-wave.svg');
+  }
+
+  @include abstracts.mq(tablet-reference) {
+    .icon--phone {
+      width: var(--size-phone-icon);
+      height: var(--size-phone-icon);
+    }
+
+    .icon--burger {
+      width: calc(var(--size-burger-icon-width) + var(--space-icon) * 3);
+      height: calc(var(--size-burger-icon-height) + var(--space-icon) * 2);
+    }
+
+    .icon--close {
+      width: calc(var(--size-close-icon) - var(--space-icon));
+      height: calc(var(--size-close-icon) - var(--space-icon));
+    }
+
+    .icon--sound-wave {
+      width: var(--size-sound-wave-width-large);
+      height: var(--size-sound-wave-height-large);
+    }
+  }
+}
