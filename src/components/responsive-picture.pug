@@ -1,0 +1,15 @@
+mixin responsive-picture(name, widths, formatFallback, width, height, sizes, alt, imageClass)
+    - const srcsetFor = (format) => widths.map((imageWidth) => `/src/assets/images/optimized/${name}-${imageWidth}.${format} ${imageWidth}w`).join(", ");
+    picture
+        source(type="image/avif" srcset=srcsetFor("avif") sizes=sizes)
+        source(type="image/webp" srcset=srcsetFor("webp") sizes=sizes)
+        img(
+            class=imageClass
+            src=`/src/assets/images/optimized/${name}-${widths[widths.length - 1]}.${formatFallback}`
+            srcset=srcsetFor(formatFallback)
+            sizes=sizes
+            width=width
+            height=height
+            alt=alt
+            loading="lazy"
+        )

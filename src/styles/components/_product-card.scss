@@ -1,0 +1,49 @@
+@use '../abstracts' as abstracts;
+
+@layer components {
+  .product-card {
+    min-width: var(--space-none);
+  }
+
+  .product-card__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  .product-card__name {
+    margin: var(--space-group-gap) var(--space-none) var(--space-control-label);
+    color: var(--color-text);
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-body);
+  }
+
+  .product-card__mobile-break {
+    display: inline;
+  }
+
+  .product-card__type,
+  .product-card__price {
+    margin: var(--space-none);
+    color: var(--color-text);
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+  }
+
+  .product-card__type {
+    margin-block-end: var(--space-text-gap);
+  }
+
+  .product-card__price {
+    font-weight: var(--font-weight-bold);
+  }
+
+  @include abstracts.mq(tablet-reference) {
+    .product-card__mobile-break {
+      display: none;
+    }
+  }
+}

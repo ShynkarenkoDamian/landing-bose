@@ -1,0 +1,23 @@
+include ./responsive-picture.pug
+
+mixin product-card(product)
+    article.product-card
+        +responsive-picture(
+            product.image,
+            [160, 320, 392],
+            "png",
+            392,
+            392,
+            "(min-width: 1260px) 324px, (min-width: 744px) 392px, calc(100vw - 40px)",
+            product.alt,
+            "product-card__image",
+        )
+        h3.product-card__name
+            if product.mobileBreak
+                | SoundLink Color Bluetooth
+                br.product-card__mobile-break
+                | speaker II
+            else
+                = product.name
+        p.product-card__type= product.type
+        p.product-card__price= product.price

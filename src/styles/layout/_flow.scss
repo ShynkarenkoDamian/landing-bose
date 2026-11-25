@@ -1,0 +1,18 @@
+@use '../abstracts' as abstracts;
+
+@layer layout {
+  .l-flow {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .l-flow__item--recommended {
+    padding-block-start: var(--space-mobile-section);
+  }
+
+  @include abstracts.mq(tablet-reference) {
+    .l-flow__item--recommended {
+      padding-block-start: var(--space-section);
+    }
+  }
+}

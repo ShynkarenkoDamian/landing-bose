@@ -8,6 +8,8 @@ include ../components/menu-toggle.pug
 include ../components/nav.pug
 include ../components/site-header.pug
 include ../components/hero.pug
+include ../components/recommended.pug
+include ../layouts/flow-item.pug
 
 block title
     | Bose
@@ -19,6 +21,10 @@ block content
     - menuItems.push({ label: "CATEGORIES", href: "#" });
     - menuItems.push({ label: "HOW TO BUY", href: "#" });
     - menuItems.push({ label: "CONTACTS", href: "#" });
+    - const products = [{ image: "product-1", name: "Bose portable Smart speaker", type: "Smart home", price: "$ 399.00", alt: "Bose portable Smart speaker with handle" }, { image: "product-2", name: "SoundLink Flex Bluetooth speaker", type: "Portable bluetooth", price: "$ 149.00", alt: "SoundLink Flex Bluetooth speaker" }, { image: "product-3", name: "SoundLink Color Bluetooth speaker II", type: "Portable bluetooth", price: "$ 129.00", alt: "SoundLink Color Bluetooth speaker II", mobileBreak: true }];
     +site-header(menuItems)
-    main
-        +hero
+    main.l-flow
+        +flow-item("hero")
+            +hero
+        +flow-item("recommended")
+            +recommended(products)

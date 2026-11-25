@@ -1,0 +1,10 @@
+include ./product-card.pug
+
+mixin recommended(products)
+    section.recommended.l-grid(aria-label="Recommended")
+        .recommended__heading
+            h2.section-title.section-title--center Recommended
+        ul.recommended__list
+            each product in products
+                li.recommended__item
+                    +product-card(product)

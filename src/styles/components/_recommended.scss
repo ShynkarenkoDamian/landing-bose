@@ -1,0 +1,45 @@
+@use '../abstracts' as abstracts;
+
+@layer components {
+  .recommended {
+    row-gap: var(--space-none);
+  }
+
+  .recommended__heading {
+    grid-column: 1 / -1;
+  }
+
+  .recommended__list {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+    gap: var(--space-card-gap) var(--grid-gutter);
+    margin: var(--space-heading-gap) var(--space-none) var(--space-none);
+    padding: var(--space-none);
+    list-style: none;
+  }
+
+  .recommended__item {
+    grid-column: 1 / -1;
+  }
+
+  @include abstracts.mq(tablet-reference) {
+    .recommended__list {
+      margin-block-start: var(--space-heading-card-gap-wide);
+    }
+
+    .recommended__item {
+      grid-column: 2 / span 4;
+    }
+  }
+
+  @include abstracts.mq(desktop-reference) {
+    .recommended__list {
+      margin-block-start: var(--space-heading-card-gap-wide);
+    }
+
+    .recommended__item {
+      grid-column: span 4;
+    }
+  }
+}
