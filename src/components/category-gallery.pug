@@ -1,0 +1,12 @@
+include ./category-card.pug
+include ./button.pug
+
+mixin category-gallery(categories)
+    section.category-gallery.l-grid(aria-label="Browse Bose products by category")
+        .category-gallery__heading
+            +section-title("Browse Bose products by category")
+        ul.category-gallery__list
+            each category in categories
+                +category-card(category)
+        .category-gallery__action
+            +button("View all", ["solid", "full"])

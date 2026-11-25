@@ -1,6 +1,6 @@
-mixin responsive-picture(name, widths, formatFallback, width, height, sizes, alt, imageClass)
+mixin responsive-picture(name, widths, formatFallback, width, height, sizes, alt, imageClass, pictureClass)
     - const srcsetFor = (format) => widths.map((imageWidth) => `/src/assets/images/optimized/${name}-${imageWidth}.${format} ${imageWidth}w`).join(", ");
-    picture
+    picture(class=pictureClass)
         source(type="image/avif" srcset=srcsetFor("avif") sizes=sizes)
         source(type="image/webp" srcset=srcsetFor("webp") sizes=sizes)
         img(

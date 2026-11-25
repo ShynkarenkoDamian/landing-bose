@@ -1,0 +1,32 @@
+include ./responsive-picture.pug
+
+mixin category-card(category)
+    - const wide = { kind: "wide", widths: [260, 520, 672], width: 672, height: 324, sizes: "(min-width: 1260px) 672px, (min-width: 744px) 392px, 130px" };
+    - const narrow = { kind: "narrow", widths: [260, 324], width: 324, height: 324, sizes: "(min-width: 1260px) 324px, (min-width: 744px) 184px, 130px" };
+    - const first = category.layout === "wide-left" ? wide : narrow;
+    - const second = category.layout === "wide-left" ? narrow : wide;
+    li.category-card(class=`category-card--${category.layout}`)
+        .category-card__media
+            +responsive-picture(
+                category.firstImage,
+                first.widths,
+                "jpg",
+                first.width,
+                first.height,
+                first.sizes,
+                category.firstAlt,
+                "category-card__image",
+                `category-card__picture category-card__picture--${first.kind}`,
+            )
+            +responsive-picture(
+                category.secondImage,
+                second.widths,
+                "jpg",
+                second.width,
+                second.height,
+                second.sizes,
+                category.secondAlt,
+                "category-card__image",
+                `category-card__picture category-card__picture--${second.kind}`,
+            )
+        h3.category-card__label= category.label

@@ -1,0 +1,44 @@
+@use '../abstracts' as abstracts;
+
+@layer components {
+  .category-gallery {
+    row-gap: var(--space-none);
+  }
+
+  .category-gallery__heading,
+  .category-gallery__list,
+  .category-gallery__action {
+    grid-column: 1 / -1;
+  }
+
+  .category-gallery__list {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+    row-gap: var(--space-card-gap);
+    margin: var(--space-heading-gap) var(--space-none) var(--space-none);
+    padding: var(--space-none);
+    list-style: none;
+  }
+
+  .category-gallery__action {
+    margin-block-start: var(--space-card-gap);
+  }
+
+  @include abstracts.mq(tablet-reference) {
+    .category-gallery__list {
+      row-gap: var(--space-heading-card-gap-wide);
+      margin-block-start: var(--space-heading-card-gap-wide);
+    }
+
+    .category-gallery__action {
+      margin-block-start: var(--space-heading-card-gap-wide);
+      grid-column: 2 / span 4;
+    }
+  }
+
+  @include abstracts.mq(desktop-reference) {
+    .category-gallery__action {
+      grid-column: 5 / span 4;
+    }
+  }
+}
