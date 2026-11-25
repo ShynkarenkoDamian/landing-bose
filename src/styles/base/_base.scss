@@ -1,9 +1,7 @@
-@use '../abstracts/tokens' as tokens;
-
 @layer base {
   body {
-    font-family: tokens.$font-family-base;
-    font-size: tokens.$font-size-base;
-    line-height: tokens.$line-height-base;
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-copy);
   }
 }

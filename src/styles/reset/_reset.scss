@@ -1,4 +1,3 @@
-@use '../abstracts/tokens' as tokens;
 @layer reset, base, layout, components, utilities;
 
 @layer reset {
@@ -9,6 +8,6 @@
   }
 
   body {
-    margin: tokens.$space-none;
+    margin: var(--space-none);
   }
 }

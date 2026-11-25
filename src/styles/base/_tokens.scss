@@ -1,0 +1,45 @@
+@use '../abstracts/tokens' as tokens;
+
+@layer base {
+  :root {
+    @each $name, $value in tokens.$colors {
+      --color-#{$name}: #{$value};
+    }
+
+    @each $name, $value in tokens.$font-families {
+      --font-family-#{$name}: #{$value};
+    }
+
+    @each $name, $value in tokens.$font-weights {
+      --font-weight-#{$name}: #{$value};
+    }
+
+    @each $name, $value in tokens.$font-sizes {
+      --font-size-#{$name}: #{$value};
+    }
+
+    @each $name, $value in tokens.$line-heights {
+      --line-height-#{$name}: #{$value};
+    }
+
+    @each $name, $value in tokens.$letter-spacings {
+      --letter-spacing-#{$name}: #{$value};
+    }
+
+    @each $name, $value in tokens.$spacing {
+      --space-#{$name}: #{$value};
+    }
+
+    @each $name, $value in tokens.$radii {
+      --radius-#{$name}: #{$value};
+    }
+
+    @each $name, $value in tokens.$shadows {
+      --shadow-#{$name}: #{$value};
+    }
+
+    @each $name, $value in tokens.$grid {
+      --grid-#{$name}: #{$value};
+    }
+  }
+}
