@@ -1,0 +1,49 @@
+@use '../abstracts' as abstracts;
+
+@layer layout {
+  .l-grid {
+    --grid-columns: var(--grid-mobile-columns);
+    --grid-gutter: var(--grid-mobile-gutter);
+    --grid-margin: var(--grid-mobile-margin);
+    --grid-column-width: calc((100% - (var(--grid-columns) - 1) * var(--grid-gutter)) / var(--grid-columns));
+
+    display: grid;
+    width: min(calc(100% - var(--grid-margin) - var(--grid-margin)), var(--grid-content-max));
+    max-width: var(--grid-content-max);
+    margin-inline: auto;
+    grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+    gap: var(--grid-gutter);
+  }
+
+  .l-grid__bleed {
+    width: 100vw;
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+
+  .l-grid--debug {
+    background-image: repeating-linear-gradient(
+      to right,
+      var(--color-grid-debug) 0,
+      var(--color-grid-debug) var(--grid-column-width),
+      transparent var(--grid-column-width),
+      transparent calc(var(--grid-column-width) + var(--grid-gutter))
+    );
+  }
+
+  @include abstracts.mq(tablet-reference) {
+    .l-grid {
+      --grid-columns: var(--grid-tablet-columns);
+      --grid-gutter: var(--grid-tablet-gutter);
+      --grid-margin: var(--grid-tablet-margin);
+    }
+  }
+
+  @include abstracts.mq(desktop-reference) {
+    .l-grid {
+      --grid-columns: var(--grid-desktop-columns);
+      --grid-gutter: var(--grid-desktop-gutter);
+      --grid-margin: var(--grid-desktop-margin);
+    }
+  }
+}
