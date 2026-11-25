@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "images": "node scripts/images.mjs",
+    "optimize:svg": "node scripts/optimize-svg.mjs",
     "preview": "vite preview",
     "format": "prettier --write .",
     "lint": "npm run lint:styles && npm run lint:format",
@@ -36,6 +37,7 @@
     "sharp": "^0.35.5",
     "stylelint": "^18.0.0",
     "stylelint-config-standard-scss": "^18.0.0",
+    "svgo": "^4.1.0",
     "vite": "8.3.3",
     "vituum": "^1.2.0"
   }

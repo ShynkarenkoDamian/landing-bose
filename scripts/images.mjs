@@ -2,10 +2,14 @@ import { mkdir, readdir, rm, stat } from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
 
-const SOURCE_DIR = "images-src";
-const OUTPUT_DIR = path.join("src", "assets", "images");
+const SOURCE_DIR = path.join("src", "assets", "images", "original");
+const OUTPUT_DIR = path.join("src", "assets", "images", "optimized");
 const WIDTHS = [400, 800];
 const SOURCE_PATTERN = /\.(jpe?g|png)$/i;
+const OUTPUT_NAMES = {
+    "Image (1).png": "unconfirmed-banner-photo",
+    "image.png": "unconfirmed-hero-photo",
+};
 
 const kb = (bytes) => `${(bytes / 1024).toFixed(1)} KB`;
 
@@ -50,14 +54,16 @@ async function main() {
 
     for (const source of sources) {
         const input = path.join(SOURCE_DIR, source);
-        const name = path.parse(source).name;
+        const name = OUTPUT_NAMES[source] ?? path.parse(source).name;
         const { width, hasAlpha } = await sharp(input).metadata();
         const fallbackFormat = hasAlpha ? "png" : "jpg";
         const sourceBytes = (await stat(input)).size;
         const outputs = [];
 
-        for (const targetWidth of WIDTHS) {
-            outputs.push(...(await render(input, name, Math.min(targetWidth, width), fallbackFormat)));
+        const targetWidths = [...new Set(WIDTHS.map((targetWidth) => Math.min(targetWidth, width)))];
+
+        for (const targetWidth of targetWidths) {
+            outputs.push(...(await render(input, name, targetWidth, fallbackFormat)));
         }
 
         const outputBytes = outputs.reduce((total, file) => total + file.bytes, 0);
@@ -82,7 +88,8 @@ async function main() {
     const saved = sourceTotal - outputTotal;
     const percent = ((saved / sourceTotal) * 100).toFixed(1);
     console.log(`\nSources: ${rows.length} files, ${kb(sourceTotal)}`);
-    console.log(`Generated: ${rows.length * WIDTHS.length * 3} files, ${kb(outputTotal)}`);
+    const generatedFiles = rows.reduce((total, row) => total + row.variants.length, 0);
+    console.log(`Generated: ${generatedFiles} files, ${kb(outputTotal)}`);
     console.log(`Saved: ${kb(saved)} (${percent}%)`);
 }
 
