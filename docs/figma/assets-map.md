@@ -4,7 +4,7 @@ Production rasters live in `src/assets/images/original/`; optimized variants liv
 
 ## New exports and source dimensions
 
-| Previous name        | Current path                                                                  | What it shows / use                                          | Intrinsic dimensions |       Planned output widths |
+| Previous name        | Current path                                                                  | What it shows / use                                          | Intrinsic dimensions |     Generated output widths |
 | -------------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------ | -------------------: | --------------------------: |
 | `hero-mobile.jpg`    | `src/assets/images/original/hero-mobile.jpg`                                  | Hero art direction, mobile                                   |         320 × 568 px |                 160, 320 px |
 | `hero-tablet.jpg`    | `src/assets/images/original/hero-tablet.jpg`                                  | Hero art direction, tablet                                   |         744 × 992 px |       160, 320, 640, 744 px |
@@ -17,7 +17,7 @@ The three hero files are the approved art-direction sources. Their 2× targets (
 
 ## Existing production rasters
 
-| Current path                                                | What it shows / use                                                                     | Intrinsic dimensions |      Planned output widths |
+| Current path                                                | What it shows / use                                                                     | Intrinsic dimensions |    Generated output widths |
 | ----------------------------------------------------------- | --------------------------------------------------------------------------------------- | -------------------: | -------------------------: |
 | `src/assets/images/original/product-1.png`                  | Bose portable smart speaker with handle; Recommended product 1 at 320, 744, and 1260 px |         392 × 392 px |           160, 320, 392 px |
 | `src/assets/images/original/product-2.png`                  | SoundLink Flex-style horizontal speaker; Recommended product 2 at all three widths      |         392 × 392 px |           160, 320, 392 px |
@@ -43,6 +43,24 @@ Product sources are transparent PNGs. Category PNGs have alpha channels but full
 | `docs/figma/reference/icons-and-logo-sheet.svg` | Figma icon and raster-wordmark sheet; reference only       |         280 × 256 px |
 
 All page, menu, header-hover, and image-logic references are under `docs/figma/reference/images/logic/`, outside the image optimizer. The mobile/tablet banner crop references are under `docs/figma/reference/images/banner-crops/`.
+
+### Figma-only raster reference dimensions
+
+| Reference path                                                                | What it documents               | Intrinsic dimensions |
+| ----------------------------------------------------------------------------- | ------------------------------- | -------------------: |
+| `docs/figma/reference/images/logic/Bose (320).jpg`                            | Full mobile page frame          |        320 × 4613 px |
+| `docs/figma/reference/images/logic/Bose (744).jpg`                            | Full tablet page frame          |        744 × 5617 px |
+| `docs/figma/reference/images/logic/Bose (1260).jpg`                           | Full desktop page frame         |       1260 × 4629 px |
+| `docs/figma/reference/images/logic/Menu (320).jpg`                            | Mobile menu state               |         320 × 568 px |
+| `docs/figma/reference/images/logic/Menu (744).jpg`                            | Tablet menu state               |         744 × 992 px |
+| `docs/figma/reference/images/logic/Menu (1260).jpg`                           | Desktop menu state              |        1260 × 700 px |
+| `docs/figma/reference/images/logic/Header Hovers.jpg`                         | Header hover states             |         1260 × 96 px |
+| `docs/figma/reference/images/logic/hero-crop-guide-mobile.png`                | Hero image-logic frame, mobile  |         742 × 568 px |
+| `docs/figma/reference/images/logic/hero-crop-guide-tablet.png`                | Hero image-logic frame, tablet  |        1296 × 992 px |
+| `docs/figma/reference/images/logic/hero-crop-guide-desktop.png`               | Hero image-logic frame, desktop |        1260 × 964 px |
+| `docs/figma/reference/images/logic/banner-crop-guide-desktop.png`             | Banner image-logic frame        |        1440 × 610 px |
+| `docs/figma/reference/images/banner-crops/banner-bottom-mobile-reference.jpg` | Banner mobile crop reference    |         320 × 200 px |
+| `docs/figma/reference/images/banner-crops/banner-bottom-tablet-reference.jpg` | Banner tablet crop reference    |         744 × 400 px |
 
 ## Needs confirmation / absent
 
