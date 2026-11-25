@@ -15,12 +15,6 @@
     gap: var(--grid-gutter);
   }
 
-  .l-grid__bleed {
-    width: 100vw;
-    grid-column: 1 / -1;
-    justify-self: center;
-  }
-
   .l-grid--debug {
     background-image: repeating-linear-gradient(
       to right,
