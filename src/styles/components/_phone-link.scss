@@ -51,19 +51,27 @@
 
   @include abstracts.mq(desktop-reference) {
     .phone-link--header .phone-link__number {
-      width: auto;
-      max-width: var(--space-none);
+      width: var(--space-none);
+      max-width: var(--size-phone-number-open-width);
       margin-inline-end: var(--space-none);
-      font-size: var(--font-size-small);
-      font-weight: var(--font-weight-medium);
-      line-height: var(--line-height-copy);
+      font-size: var(--font-size-caption);
+      font-weight: var(--font-weight-bold);
+      line-height: var(--size-menu-cta-line-height);
+      letter-spacing: var(--letter-spacing-navigation);
+      text-align: right;
+      text-transform: uppercase;
       opacity: 0;
       visibility: hidden;
     }
 
+    .phone-link--header:hover,
+    .phone-link--header:focus-visible {
+      width: calc(var(--size-phone-number-open-width) + var(--space-control-label) + var(--size-phone-container-wide));
+    }
+
     .phone-link--header:hover .phone-link__number,
     .phone-link--header:focus-visible .phone-link__number {
-      max-width: var(--size-phone-number-open-width);
+      width: var(--size-phone-number-open-width);
       margin-inline-end: var(--space-control-label);
       opacity: 1;
       visibility: visible;
