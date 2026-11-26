@@ -8,7 +8,7 @@ const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "
 const outputDirectory = path.join(projectRoot, "docs/figma/overlays");
 const baseUrl = process.env.PIXEL_BASE_URL ?? "http://127.0.0.1:4173/landing-bose/";
 const referenceWidths = [320, 744, 1260];
-const responsiveWidths = [360, 414, 600, 900, 1024, 1440, 1920];
+const responsiveWidths = [360, 414, 600, 900, 1024, 1440, 1920, 2560];
 const measuredSelectors = {
     "site-header": ".site-header",
     "header-logo": ".site-header__logo",
