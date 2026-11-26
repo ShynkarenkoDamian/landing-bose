@@ -40,6 +40,10 @@
   }
 
   @include abstracts.mq(tablet-reference) {
+    .site-header__actions {
+      grid-column: -2 / -1;
+    }
+
     .site-header__inner {
       padding-block: var(--space-header-wide-padding);
     }
