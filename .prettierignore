@@ -3,4 +3,5 @@ node_modules
 package-lock.json
 AGENTS.md
 docs/figma/spec.md
-docs/lighthouse
+docs/lighthouse/mobile.report.*
+docs/lighthouse/desktop.report.*
