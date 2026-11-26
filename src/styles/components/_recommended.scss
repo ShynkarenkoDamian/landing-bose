@@ -24,6 +24,10 @@
   }
 
   @include abstracts.mq(tablet-reference) {
+    .recommended__heading {
+      grid-column: 2 / span 4;
+    }
+
     .recommended__list {
       margin-block-start: var(--space-heading-card-gap-wide);
     }
@@ -34,6 +38,10 @@
   }
 
   @include abstracts.mq(desktop-reference) {
+    .recommended__heading {
+      grid-column: 4 / span 6;
+    }
+
     .recommended__list {
       margin-block-start: var(--space-heading-card-gap-wide);
     }

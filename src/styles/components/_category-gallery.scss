@@ -25,6 +25,10 @@
   }
 
   @include abstracts.mq(tablet-reference) {
+    .category-gallery__heading {
+      grid-column: 2 / span 4;
+    }
+
     .category-gallery__list {
       row-gap: var(--space-heading-card-gap-wide);
       margin-block-start: var(--space-heading-card-gap-wide);
@@ -37,6 +41,10 @@
   }
 
   @include abstracts.mq(desktop-reference) {
+    .category-gallery__heading {
+      grid-column: 4 / span 6;
+    }
+
     .category-gallery__action {
       grid-column: 5 / span 4;
     }

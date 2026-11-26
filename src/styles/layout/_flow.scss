@@ -10,33 +10,20 @@
     padding-block-start: var(--space-mobile-section);
   }
 
-  .l-flow__item--category-gallery {
-    padding-block-start: var(--space-section);
-  }
-
-  .l-flow__item--why-direct {
-    padding-block-start: var(--space-section);
-  }
-
-  .l-flow__item--contact {
-    padding-block-start: var(--space-section);
-  }
-
+  .l-flow__item--category-gallery,
+  .l-flow__item--why-direct,
+  .l-flow__item--contact,
   .l-flow__item--lower-banner {
     padding-block-start: var(--space-section);
   }
 
   @include abstracts.mq(tablet-reference) {
-    .l-flow__item--recommended {
-      padding-block-start: var(--space-section);
-    }
-
-    .l-flow__item--category-gallery {
-      padding-block-start: var(--space-section);
-    }
-
+    .l-flow__item--recommended,
+    .l-flow__item--category-gallery,
+    .l-flow__item--why-direct,
+    .l-flow__item--contact,
     .l-flow__item--lower-banner {
-      padding-block-start: var(--space-section);
+      padding-block-start: var(--space-section-wide);
     }
   }
 

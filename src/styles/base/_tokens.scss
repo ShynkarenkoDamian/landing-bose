@@ -49,5 +49,9 @@
     @each $name, $value in tokens.$grid {
       --grid-#{$name}: #{$value};
     }
+
+    @each $name, $value in tokens.$image-positions {
+      --image-position-#{$name}: #{$value};
+    }
   }
 }

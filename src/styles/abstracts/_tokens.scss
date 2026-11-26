@@ -72,6 +72,7 @@ $spacing: (
   mobile-section: 64px,
   tablet-margin: 72px,
   section: 96px,
+  section-wide: 120px,
   desktop-margin: 120px,
   header-mobile-padding: 24px,
   header-wide-padding: 32px,
@@ -149,6 +150,17 @@ $sizes: (
   burger-line-mid-wide: 12px,
 );
 
+$image-positions: (
+  category-headphones-mobile: 60.30560967522034% 0%,
+  category-headphones-tablet: 74.868122198649% 0%,
+  category-speakers-mobile: 90.2527669534907% 87.82534407578481%,
+  category-speakers-tablet: 47.86513586400389% 11.00388194007044%,
+  category-sunglasses-mobile: 88.58912874968871% 50%,
+  category-sunglasses-tablet: 80.95632257057605% 60.72481827731535%,
+  lower-banner-mobile: 42% 50%,
+  lower-banner-tablet: 50% 50%,
+  lower-banner-desktop: 50% 50%,
+);
 $z-index: (
   menu-header: 2,
   menu-panel: 1,
