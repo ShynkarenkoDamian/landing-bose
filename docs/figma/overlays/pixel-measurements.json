@@ -1497,9 +1497,9 @@
         "referenceHeight": 5617,
         "actualWidth": 744,
         "actualHeight": 5618,
-        "changedPixelsAbove16": 249305,
-        "changedPercent": 5.966,
-        "meanMaxChannelError": 4.836,
+        "changedPixelsAbove16": 249125,
+        "changedPercent": 5.961,
+        "meanMaxChannelError": 4.83,
         "maxChannelError": 255
       }
     },
@@ -2248,9 +2248,9 @@
         "referenceHeight": 4629,
         "actualWidth": 1260,
         "actualHeight": 4629,
-        "changedPixelsAbove16": 159978,
-        "changedPercent": 2.743,
-        "meanMaxChannelError": 3.334,
+        "changedPixelsAbove16": 159797,
+        "changedPercent": 2.74,
+        "meanMaxChannelError": 3.329,
         "maxChannelError": 253
       }
     }
