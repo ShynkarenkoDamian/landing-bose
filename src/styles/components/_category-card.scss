@@ -30,8 +30,20 @@
     object-position: center center;
   }
 
+  .category-card__image--headphones-wide {
+    object-position: var(--image-position-category-headphones-mobile);
+  }
+
+  .category-card__image--speakers-wide {
+    object-position: var(--image-position-category-speakers-mobile);
+  }
+
+  .category-card__image--sunglasses-wide {
+    object-position: var(--image-position-category-sunglasses-mobile);
+  }
+
   .category-card__label {
-    margin: var(--space-control-label) var(--space-none) var(--space-none);
+    margin: var(--space-form-gap) var(--space-none) var(--space-none);
     color: var(--color-text);
     font-size: var(--font-size-body);
     font-weight: var(--font-weight-bold);
@@ -49,6 +61,18 @@
 
     .category-card__picture--narrow {
       grid-column: span 2;
+    }
+
+    .category-card__image--headphones-wide {
+      object-position: var(--image-position-category-headphones-tablet);
+    }
+
+    .category-card__image--speakers-wide {
+      object-position: var(--image-position-category-speakers-tablet);
+    }
+
+    .category-card__image--sunglasses-wide {
+      object-position: var(--image-position-category-sunglasses-tablet);
     }
 
     .category-card__label {

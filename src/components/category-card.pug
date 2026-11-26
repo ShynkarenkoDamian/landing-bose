@@ -15,7 +15,7 @@ mixin category-card(category)
                 first.height,
                 first.sizes,
                 category.firstAlt,
-                "category-card__image",
+                `category-card__image category-card__image--${category.key}-${first.kind}`,
                 `category-card__picture category-card__picture--${first.kind}`,
             )
             +responsive-picture(
@@ -26,7 +26,7 @@ mixin category-card(category)
                 second.height,
                 second.sizes,
                 category.secondAlt,
-                "category-card__image",
+                `category-card__image category-card__image--${category.key}-${second.kind}`,
                 `category-card__picture category-card__picture--${second.kind}`,
             )
         h3.category-card__label= category.label
