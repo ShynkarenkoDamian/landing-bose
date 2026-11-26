@@ -37,8 +37,8 @@
 
   @include abstracts.mq(tablet-reference) {
     .icon--phone {
-      width: var(--size-phone-icon);
-      height: var(--size-phone-icon);
+      width: var(--size-phone-icon-wide);
+      height: var(--size-phone-icon-wide);
     }
 
     .icon--burger {
@@ -47,8 +47,8 @@
     }
 
     .icon--close {
-      width: calc(var(--size-close-icon) - var(--space-icon));
-      height: calc(var(--size-close-icon) - var(--space-icon));
+      width: var(--size-close-icon-wide);
+      height: var(--size-close-icon-wide);
     }
 
     .icon--sound-wave {

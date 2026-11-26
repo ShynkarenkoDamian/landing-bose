@@ -59,8 +59,6 @@
   }
 
   .menu-toggle__close {
-    width: var(--size-close-icon-mobile);
-    height: var(--size-close-icon-mobile);
     opacity: 0;
     visibility: hidden;
   }
@@ -100,8 +98,7 @@
     }
 
     .menu-toggle__hover {
-      transform: scale(1.3333333333333333);
-      transform-origin: left center;
+      gap: var(--space-burger-line-gap-wide);
     }
 
     .menu-toggle__line {
@@ -118,11 +115,6 @@
 
     .menu-toggle__line:nth-child(3) {
       width: var(--size-burger-line-mid-wide);
-    }
-
-    .menu-toggle__close {
-      width: var(--size-close-icon-wide);
-      height: var(--size-close-icon-wide);
     }
   }
 }
