@@ -1,7 +1,7 @@
 mixin site-header(menuItems)
     header.site-header.l-bleed
         .site-header__inner.l-grid
-            a.site-header__logo(href="/" aria-label="Bose home")
+            a.site-header__logo(href="./" aria-label="Bose home")
                 picture
                     source(
                         type="image/avif"
@@ -22,6 +22,6 @@ mixin site-header(menuItems)
                         alt="BOSE"
                     )
             .site-header__actions
-                +phone-link("+1 234 555-55-55", "tel:+1234555555", "header")
+                +phone-link("+1 234 555-55-55", "tel:+12345555555", "header")
                 +menu-toggle
             +nav(menuItems)

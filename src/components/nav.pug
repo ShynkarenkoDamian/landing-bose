@@ -5,6 +5,6 @@ mixin nav(menuItems)
                 each item in menuItems
                     li.nav__item
                         a.nav__link(href=item.href)= item.label
-            +phone-link("+1 234 5555-55-55", "tel:+12345555555", "menu", "nav__phone")
+            +phone-link("+1 234 5555-55-55", "tel:+123455555555", "menu", "nav__phone")
             .nav__call-to-order
-                +button("CALL TO ORDER", ["menu"], "tel:+12345555555")
+                +button("CALL TO ORDER", ["menu"], "tel:+123455555555")
