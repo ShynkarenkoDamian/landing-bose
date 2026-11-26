@@ -24,7 +24,7 @@ mixin contact
             })
             +field({ variant: "textarea", label: "Message", name: "message", autocomplete: "off", required: true })
             .contact__action
-                +button("Send", ["solid", "full"], null, "submit")
+                +button("Send", ["reference-hover", "full"], null, "submit")
         dl.contact__details
             .contact__item
                 dt.contact__label Phone

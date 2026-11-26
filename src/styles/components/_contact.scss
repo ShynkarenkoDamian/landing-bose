@@ -8,6 +8,7 @@
   .contact__heading,
   .contact__form,
   .contact__details {
+    align-self: start;
     grid-column: 1 / -1;
   }
 
@@ -63,6 +64,10 @@
   }
 
   @include abstracts.mq(tablet-reference) {
+    .contact__heading {
+      grid-column: 2 / span 4;
+    }
+
     .contact__form {
       grid-column: 1 / span 3;
     }
@@ -70,11 +75,14 @@
     .contact__details {
       grid-column: 4 / span 3;
       width: var(--size-contact-details-wide);
-      margin-block-start: var(--space-heading-gap);
     }
   }
 
   @include abstracts.mq(desktop-reference) {
+    .contact__heading {
+      grid-column: 5 / span 4;
+    }
+
     .contact__form {
       grid-column: 1 / span 5;
     }
